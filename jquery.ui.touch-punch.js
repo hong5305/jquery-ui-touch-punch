@@ -35,10 +35,13 @@
 		}
 
 		// event.preventDefault(); // REPLACED WITH:
-		// -------- NEW-START --------
+		// var touch = event.originalEvent.changedTouches[0];
+		// var simulatedEvent = document.createEvent('MouseEvents');
 
 		var touch = event.originalEvent.changedTouches[0];
 		var simulatedEvent = document.createEvent('MouseEvents');
+		
+		// -------- NEW --------
 
 		//Check if element is an input or a textarea
 		if ($(touch.target).is("input") || $(touch.target).is("textarea"))
@@ -46,10 +49,7 @@
 		else
 			event.preventDefault();
 
-		// ------- NEW-END --------
-
-		var touch = event.originalEvent.changedTouches[0],
-			simulatedEvent = document.createEvent('MouseEvents');
+		// ------- END-NEW --------
 
 		// Initialize the simulated mouse event using the touch event's coordinates
 		simulatedEvent.initMouseEvent(
