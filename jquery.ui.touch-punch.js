@@ -43,8 +43,8 @@
 		
 		// -------- NEW --------
 
-		//Check if element is an input or a textarea
-		if ($(touch.target).is("input") || $(touch.target).is("textarea"))
+		//Check if element is an input or a textarea or a link
+		if ($(touch.target).is("input") || $(touch.target).is("textarea") || $(touch.target).is("a"))
 			event.stopPropagation();
 		else
 			event.preventDefault();
